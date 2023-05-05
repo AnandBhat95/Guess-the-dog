@@ -1,0 +1,48 @@
+<div>
+  <mat-spinner id="load" *ngIf="!isLoading"></mat-spinner>
+</div>
+<div class="back" *ngIf="isLoading">
+  <p class="heading">Guess the breed</p>
+  <div class="card">
+    <img src="{{ dogs.message }}" class="image" alt="loading" />
+    <!-- <h1>{{breed}}</h1> -->
+    <div class="form">
+      <form [formGroup]="answerForm" (ngSubmit)="haveData()">
+        <div *ngIf="textField">
+          <input
+            type="text"
+            placeholder="Guess the name"
+            name="title"
+            formControlName="title"
+          /><br />
+          <input type="submit" [disabled]="answerForm.invalid" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <div *ngIf="correct" class="correct">
+      <h3>Hoorray..!</h3>
+      <h4>
+        You have guessed correct..wann
+        <p (click)="reload()" class="play">Play again?</p>
+      </h4>
+    </div>
+    <div *ngIf="incorrect" class="incorrect">
+      <h3>Ooops</h3>
+      <h4>You have guessed wrong ..try again</h4>
+      <p class="play" (click)="seeAnswer()">See answer</p>
+      <p *ngIf="answer">
+        {{ breed }}
+        <span class="play" (click)="reload()">&nbsp; &nbsp; Play again?</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isLoading">
+<footer>
+  <div class="footer-container">
+    <p>Copyright © 2023 - Wolken</p>
+  </div>
+</footer>
+</div>

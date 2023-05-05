@@ -1,0 +1,31 @@
+<div>
+  <mat-spinner id="load" *ngIf="!isLoading"></mat-spinner>
+</div>
+<div class="back" *ngIf="isLoading">
+  <h1 class="title">List of breeds</h1>
+
+  <div class="search-container">
+    <span>Search:</span>
+    <input type="text" class="search" [(ngModel)]="enteredSerchValue" />
+  </div>
+  <ul>
+    <div class="grid-container">
+      <ng-container *ngFor="let i of dogKeys">
+        <li *ngIf="i.includes(enteredSerchValue)">
+          <div class="grid-item">
+            <img
+              src="https://replicate.delivery/pbxt/YEmgfjVLfRl3GE2LpfGAJE1ObGFNDMqI70BxPWGmwetXZXhDB/out-0.png"
+              class="image"
+            />
+            <p>{{ i }}</p>
+          </div>
+        </li>
+      </ng-container>
+    </div>
+  </ul>
+  <!-- <footer>
+    <div class="footer-container">
+      <p>Copyright © 2023 - Wolken</p>
+    </div>
+  </footer> -->
+</div>

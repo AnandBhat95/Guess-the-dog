@@ -1,0 +1,15 @@
+<ul>
+  <li ><a class="rest" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+  <li ><a routerLink="about" class="rest" routerLinkActive="active-link">About Us</a></li>
+  <li ><a routerLink="game" class="rest" routerLinkActive="active-link">Start Game</a></li>
+  <li ><a routerLink="breeds" class="rest" routerLinkActive="active-link">Breeds</a></li>
+  <div *ngIf="checkLogin">
+    <li><a class="login" routerLink="login" routerLinkActive="active-link">Login</a></li>
+  </div>
+  <div *ngIf="checkLogout">
+    <li><a class="login" routerLink="logout" (click)="logout()">Logout</a></li>
+  </div>
+</ul>
+<router-outlet></router-outlet>
+
+
