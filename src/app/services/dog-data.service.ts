@@ -11,6 +11,7 @@ export class DogDataService {
 
   url1="https://dog.ceo/api/breeds/list/all"
 
+
   dogsImages:any=[]
   dogsNames:any[]
   details:any=[]
@@ -21,5 +22,9 @@ export class DogDataService {
   }
   breeds(){
     return this.http.get(this.url1)
+  }
+  images(breedName){
+    const url3='https://dog.ceo/api/breed/'+breedName+'/images/random'
+    return this.http.get(url3);
   }
 }

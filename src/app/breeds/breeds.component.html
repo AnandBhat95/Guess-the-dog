@@ -10,14 +10,14 @@
   </div>
   <ul>
     <div class="grid-container">
-      <ng-container *ngFor="let i of dogKeys">
-        <li *ngIf="i.includes(enteredSerchValue)">
+      <ng-container *ngFor="let i of breedsData">
+        <li *ngIf="i.name.includes(enteredSerchValue)">
           <div class="grid-item">
             <img
-              src="https://replicate.delivery/pbxt/YEmgfjVLfRl3GE2LpfGAJE1ObGFNDMqI70BxPWGmwetXZXhDB/out-0.png"
+              src={{i.image}}
               class="image"
             />
-            <p>{{ i }}</p>
+            <p>{{i.name}} </p>
           </div>
         </li>
       </ng-container>

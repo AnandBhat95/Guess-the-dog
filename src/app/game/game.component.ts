@@ -27,7 +27,7 @@ export class GameComponent implements OnInit {
 
     setTimeout(()=>{
       this.isLoading = true
-    },2000)
+    },1000)
   }
   ngOnInit(): void {
     this.dogData.dogs().subscribe((data) => {

@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatFormFieldModule
 
   ],
   providers: [],

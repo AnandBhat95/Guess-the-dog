@@ -5,6 +5,7 @@
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <label for="email">User Id</label>
       <input
+        placeholder="admin"
         type="text"
         id="email"
         name="userid"
@@ -55,6 +56,7 @@
           class="hide-pass"
           [type]="hide ? 'password' : 'text'"
           name="password"
+          placeholder="pulsar200"
           formControlName="password"
           required
         >
